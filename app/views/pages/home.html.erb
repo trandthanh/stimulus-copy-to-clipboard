@@ -1,6 +1,8 @@
-<div class="container">
-  <div data-controller="clipboard">
-    <input data-clipboard-target="source" type="text" value="https://www.lewagon.com/" readonly>
-    <button data-action="click->clipboard#copy" class="btn btn-primary">Copy to Clipboard</button>
+<div class="container d-flex align-items-center" style="height: 100vh;">
+  <div class="input-group" data-controller="clipboard">
+    <input data-clipboard-target="source" type="text" value="https://www.lewagon.com/" class="form-control" readonly>
+    <div class="input-group-append">
+      <button data-action="click->clipboard#copy" class="btn btn-outline-primary" style="width: 200px;">Copy to Clipboard</button>
+    </div>
   </div>
 </div>
