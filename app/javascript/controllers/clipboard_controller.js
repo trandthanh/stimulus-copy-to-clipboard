@@ -1,19 +1,19 @@
 import { Controller } from "stimulus";
 
 export default class extends Controller {
-  static targets = ["source"];
+  static targets = ["input"];
+  static values = {
+    disabledContent: String
+  }
 
   copy(event) {
-    this.sourceTarget.select();
+    this.inputTarget.select();
     document.execCommand('copy');
     this._confirmText(event);
   }
 
   _confirmText(event) {
-    const button = event.currentTarget
-    button.innerText = "Copied";
-    setTimeout((event) => {
-      button.innerText = "Copy to clipboard";
-    }, 2000)
+    event.currentTarget.disabled = true;
+    event.currentTarget.innerText = this.disabledContentValue;
   }
 }
