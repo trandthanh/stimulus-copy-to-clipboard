@@ -1,6 +1,6 @@
 <div class="container">
   <div data-controller="clipboard">
-    <input type="text" value="https://www.lewagon.com/" readonly>
-    <button>Copy to Clipboard</button>
+    <input data-clipboard-target="source" type="text" value="https://www.lewagon.com/" readonly>
+    <button data-action="click->clipboard#copy">Copy to Clipboard</button>
   </div>
 </div>
